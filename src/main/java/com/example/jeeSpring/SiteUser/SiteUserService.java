@@ -28,4 +28,8 @@ public class SiteUserService {
 
         siteUserRepository.save(user);
     }
+
+    public void deleteStudent(Long userId) {
+        Optional<SiteUser> userOptional = siteUserRepository.findSiteUserById(userId);
+    }
 }
