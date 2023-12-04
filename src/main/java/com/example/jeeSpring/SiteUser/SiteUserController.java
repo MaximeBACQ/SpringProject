@@ -17,7 +17,7 @@ public class SiteUserController {
         this.siteUserService = siteUserService;
     }
 
-    @GetMapping("")
+    @GetMapping
     public List<SiteUser> getSiteUsers(){
         return siteUserService.getSiteUsers();
     }

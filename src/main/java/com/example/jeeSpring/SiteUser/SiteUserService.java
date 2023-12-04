@@ -18,11 +18,6 @@ public class SiteUserService {
 
     public List<SiteUser> getSiteUsers(){
         return siteUserRepository.findAll();
-//        return List.of(
-//                new SiteUser("admin","admin","admin", "admin@gmail.com",
-//                        LocalDate.of(2002, Month.JULY, 29)
-//                        ,"Male","admin",true,true,true)
-//        );
     }
 
     public void addNewUser(SiteUser user) {
