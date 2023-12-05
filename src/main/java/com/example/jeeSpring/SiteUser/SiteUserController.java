@@ -27,8 +27,8 @@ public class SiteUserController {
         siteUserService.addNewUser(user);
     }
 
-    @DeleteMapping(path="{studentId}")
-    public void deleteUser(@PathVariable("studentId") Long userId){
+    @DeleteMapping(path="{userId}")
+    public void deleteUser(@PathVariable("userId") Long userId){
         siteUserService.deleteStudent(userId);
     }
 }
