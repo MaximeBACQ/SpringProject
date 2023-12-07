@@ -1,0 +1,38 @@
+.admin-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Century Gothic, sans-serif;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+ .admin-user{
+     border-radius: 1em;
+     box-shadow: 0 0 14px rgba(0,0,0,0.3);
+     padding: 50px;
+ }
+
+ .admin-product{
+     border-radius: 1em;
+     box-shadow: 0 0 14px rgba(0,0,0,0.3);
+     padding: 50px;
+ }
+
+
+.admin-main input{
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 10px;
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+.admin-main input:hover{
+    box-shadow: 0 0 5px #C3B1E1;
+}

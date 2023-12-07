@@ -1,0 +1,281 @@
+body::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #404040;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #FFC300;
+    border-radius: 1em;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+
+
+
+body {
+    background-color: white;
+    position: relative;
+}
+
+
+/*MAIN : menu à gauche*/
+main {
+    display: flex;
+    margin-bottom: 30px;
+    min-height:100%;
+}
+
+
+.en-vedette-titre{
+    font-size : 30px;
+    text-align: center;
+    font-family: 'Trade Gothic LT Std', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.en-vedette{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.vedette-produit{
+    width: 660px;
+    height: 500px;
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    border-radius: 1em;
+    font-family: inherit;
+}
+
+.vedette-texte{
+    margin-left: 40px;
+    margin-top: 50px;
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.vedette-produit img{
+    width: 400px;
+
+    float: right;
+    margin-top: -400px;
+    filter: drop-shadow(30px 10px 4px rgba(0,0,0,0.3));
+    transition: 200ms ease;
+}
+
+
+.vedette-produit img:hover{
+    transform: scale(1.1);
+}
+
+.vedette-titre{
+    font-size: 30px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight : 300;
+    letter-spacing: 2px;
+}
+
+.vedette-prix{
+    color: black;
+    font-size: 40px;
+}
+
+.en-vedette form input{
+    font-weight: bold;
+    background-color: black;
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+    margin-top: -20px;
+    transition: 200ms ease;
+}
+
+.en-vedette input:hover{
+    transform: scale(1.2);
+}
+
+.en-vedette button{
+    font-weight: bold;
+    background-color: black;
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+    margin-top: -20px;
+    transition: 200ms ease;
+}
+
+.en-vedette button:hover{
+    transform: scale(1.2);
+}
+
+
+.vedette-reduc{
+    text-decoration: line-through;
+    letter-spacing: 2px;
+    margin-left: 20px;
+}
+
+
+button {
+    border: none;
+    padding: 3px;
+    background: inherit;
+}
+
+
+.container{
+    height: 60%;
+    margin-bottom: 80px;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 85% 85% / 30%;
+}
+
+.slider-wrapper{
+    position: relative;
+    margin: 0 auto;
+}
+
+
+.slider{
+    display: flex;
+    aspect-ratio: 16/6.7;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    border-radius: 0 0 85% 85% / 30%;
+}
+
+
+.slider img{
+
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:1;
+}
+
+
+.slider-nav a{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #FFC300;
+    transition: ease 250ms;
+}
+
+.slider-nav a:hover{
+    transform: scale(1.2);
+    background-color: rgb(255, 123, 0);
+}
+
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+.test-titre1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.test-titre1 li {
+    display: inline-block;
+    list-style: none;
+    color: black;
+    font-family: 'Trade Gothic LT Std', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    animation: flash 1.4s linear infinite;
+
+}
+
+
+
+@keyframes flash {
+    70% {
+        color: black;
+        text-shadow: none;
+    }
+
+    80% {
+        color: #FFC300;
+        text-shadow: none;
+        text-shadow: 0 0 4px #FFC300;
+    }
+
+    0% {
+        color: black;
+    }
+}
+
+
+.test-titre1 li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.test-titre1 li:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.test-titre1 li:nth-child(7) {
+    animation-delay: .3s;
+}
+
+.test-titre1 li:nth-child(8) {
+    animation-delay: .4s;
+}
+
+.test-titre1 li:nth-child(9) {
+    animation-delay: .5s;
+}
+
+.test-titre1 li:nth-child(10) {
+    animation-delay: .6s;
+}
+
+
+.test-titre1 li:nth-child(11) {
+    animation-delay: .7s;
+}
+
+.test-titre1 li:nth-child(12) {
+    animation-delay: .8s;
+}
+
+.test-titre1 li:nth-child(13) {
+    animation-delay: .9s;
+}
+
+.test-titre1 li:nth-child(14) {
+    animation-delay: 1s;
+}
+
+
+.search-title{
+    margin-left: 15%;
+    font-size: 30px;
+}
+

@@ -1,0 +1,384 @@
+.header-banniere {
+    display: flex;
+    background-color: #C3B1E1;
+    align-items: center;
+
+}
+
+
+#header-banniere-logo {
+    float: left;
+    width: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 200px;
+}
+
+
+#header-banniere-titre {
+    color: black;
+    font-size: 30px;
+    padding-left: 28%;
+    padding-right: 25%;
+    letter-spacing: 2.5px;
+}
+
+
+
+.header-banniere img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+
+.header-banniere li  {
+    color: white;
+    list-style: none;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+.header-banniere .compte-client .dessous{
+    color: white;
+    font-size: 10px;
+    margin-left:5px;
+}
+
+.header-banniere li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.header {
+    font-family:'Trade Gothic LT Std', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+    .header-banniere {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    .header-banniere #header-banniere-logo {
+        display: none;
+    }
+
+    .header-menu {
+        padding: 10px;
+    }
+
+    .header-menu ul li a {
+        font-size: 14px;
+    }
+
+    .header-menu ul li a .fa {
+        font-size: 14px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+}
+
+
+.header-menu {
+
+    background-color: #404040;
+    text-align: center;
+
+}
+
+
+.header-menu ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+
+.header-menu ul li {
+    background: #404040;
+    margin-right: 5px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+}
+
+
+.header-menu ul li a{
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.header-menu ul .no-search{
+    padding-top : 25px;
+}
+
+
+
+.header-menu ul li form input{
+    border-radius: 1em;
+    transition: 0.2s;
+    height: 40px;
+    font-size: 14px;
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 40px;
+    background-color: #fff;
+    border: 3px solid #000;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+.header-menu ul li form input:hover {
+    border: 3px solid #C3B1E1;
+    box-shadow: 0 0 14px #C3B1E1;
+    color: dimgray;
+}
+
+
+
+
+
+.header-menu ul li, .header-menu ul li a  {
+    transition: 0.15s;
+}
+
+.header-menu ul li a:hover {
+    color: #C3B1E1;
+
+}
+
+
+
+.header-menu ul ul li a {
+    color: white;
+}
+
+
+
+
+
+.header-menu .fa {
+    margin-right: 15px;
+}
+
+
+.header-sous-menu-1, .header-sous-menu-bag {
+    display: none;
+}
+
+
+
+
+
+
+.header-menu ul li:hover .header-sous-menu-1 {
+    background: #000000;
+
+    display: block;
+    position: absolute;
+    z-index: 2;
+    margin-top: 10px;
+    margin-left: -25px;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.header-menu ul li:hover .header-sous-menu-bag ul {
+    background: #C3B1E1;
+    color: white;
+    display: block;
+    margin: 10px;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-bag ul li {
+    background: #C3B1E1;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-bag {
+    background: #C3B1E1;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-1 ul {
+    background: #C3B1E1;
+    display: block;
+    margin: 10px;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-1 ul li {
+    background: #C3B1E1;
+    text-align: left;
+    width: 150px;
+    padding: 10px;
+        border-bottom: 1px dotted #C3B1E1;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-1 ul li:last-child {
+    border-bottom: 0px;
+}
+
+
+.header-menu ul li:hover .header-sous-menu-1 ul li a:hover {
+    color: #C3B1E1;
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+.neon_inscription {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.neon_inscription {
+    margin-top: 6px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 6vh;
+}
+
+.neon_inscription {
+    position: relative;
+}
+
+.neon_inscription a {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+
+}
+
+.neon_inscription:hover a {
+    letter-spacing: 3px;
+}
+
+.neon_inscription a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15),
+    transparent);
+    transform: skewX(45deg) translateX(0);
+    transition: 0.5s;
+}
+
+
+.neon_inscription:hover a::before {
+    transform: skewX(45deg) translateX(200%);
+}
+
+.neon_inscription::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 8px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.neon_inscription:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+
+.neon_inscription::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #f00;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.neon_inscription:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: 0.5s;
+}
+
+
+.neon_inscription:nth-child(1)::before {
+    background: #FFC300;
+    box-shadow: 0 0 5px #FFC300,
+    0 0 15px #FFC300,
+    0 0 30px #FFC300,
+    0 0 60px #FFC300;
+}
+
+.neon_inscription:nth-child(1)::after{
+    background: #FFC300;
+    box-shadow: 0 0 5px #FFC300,
+    0 0 15px #FFC300,
+    0 0 30px #FFC300,
+    0 0 60px #FFC300;
+}
