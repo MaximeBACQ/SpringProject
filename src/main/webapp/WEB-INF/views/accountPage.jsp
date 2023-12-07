@@ -34,6 +34,7 @@
     %>
 </div>
 <br><br><br>
-<%@ include file="../html/footer.html" %>
+<link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}">
+<%@ include file="../css/footer.css" %>
 </body>
 </html>

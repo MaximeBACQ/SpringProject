@@ -22,7 +22,7 @@
         <input class="main-connexion-password" type="password" name="password" placeholder="Your Password" required /><br/>
         <input class="main-connexion-submit" type="submit" value="Login !">
     </form>
-    <p class="register"><a href="registerPage.jsp">Don't have an account ? Register here !</a></p>
+    <p class="register"><a href="registerPage">Don't have an account ? Register here !</a></p>
 
 </div>
 </div>

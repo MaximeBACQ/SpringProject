@@ -1,4 +1,4 @@
-package com.jeeSpring.Business;
+package com.jeeSpring.Business.Services;
 
 import com.jeeSpring.Model.ProductEntity;
 import com.jeeSpring.Repository.ProductRepository;
@@ -26,8 +26,7 @@ public class ProductService {
         return productRepository.findById(id).orElse(null);
     }
 
-    public void updateProduct(Long id, ProductEntity product) {
-        product.setProductId(id);
+    public void updateProduct(ProductEntity product) {
         productRepository.save(product);
     }
 
@@ -43,4 +42,7 @@ public class ProductService {
         return productRepository.findByLabelContainingOrDescriptionContaining(searchString, searchString);
     }
 
+    public List<ProductEntity> searchProductsByLabel(String searchString) {
+        return productRepository.findByLabelContaining(searchString);
+    }
 }

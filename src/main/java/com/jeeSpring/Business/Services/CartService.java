@@ -1,4 +1,4 @@
-package com.jeeSpring.Business;
+package com.jeeSpring.Business.Services;
 
 import com.jeeSpring.Model.CartEntity;
 import com.jeeSpring.Model.ProductEntity;
@@ -26,8 +26,7 @@ public class CartService {
         return cartRepository.findById(id).orElse(null);
     }
 
-    public void updateCart(Long id, CartEntity cart) {
-        cart.setCartId(id);
+    public void updateCart(CartEntity cart) {
         cartRepository.save(cart);
     }
 

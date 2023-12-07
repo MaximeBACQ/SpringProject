@@ -1,7 +1,9 @@
 package com.jeeSpring.AdminActions;
-/*
+
+import com.jeeSpring.Controller.ProductController;
 import com.jeeSpring.Model.CompanyEntity;
 import com.jeeSpring.Model.ProductEntity;
+import com.jeeSpring.Model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,14 +11,25 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import java.io.IOException;
 
 @WebServlet(name = "ModeratorServlet", value = "/ModeratorServlet")
 public class ModeratorServlet extends HttpServlet {
+
+    private ProductController productController;
+    @Override
+    public void init() throws ServletException {
+        super.init();
+
+        WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+        productController = context.getBean(ProductController.class);
+    }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        ProductDAO productDAO = new ProductDAO();
         HttpSession session = request.getSession();
-        SiteUser connectedPerson = (SiteUser) session.getAttribute("connectedUser");
+        User connectedPerson = (User) session.getAttribute("connectedUser");
         String finalMsg = "";
         boolean isAdmOrModConnected = connectedPerson.getIsModerator() || connectedPerson.getIsAdmin();
         if (isAdmOrModConnected) {
@@ -39,13 +52,13 @@ public class ModeratorServlet extends HttpServlet {
 
                     finalMsg = "Your product has been added.";
 
-                    productDAO.createProduct(newProduct);
+                    productController.createProduct(newProduct);
 
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("index");
             }
         }
     }
     public void destroy(){
 
     }
-} */
+} 

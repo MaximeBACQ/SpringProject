@@ -1,6 +1,6 @@
 package com.jeeSpring.Controller;
 
-import com.jeeSpring.Business.BankService;
+import com.jeeSpring.Business.Services.BankService;
 import com.jeeSpring.Model.BankAccountEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,8 +34,8 @@ public class BankController {
     }
 
     @PutMapping("{bankId}")
-    public void updateBank(@PathVariable Long bankId, @RequestBody BankAccountEntity bank) {
-        bankService.updateBank(bankId, bank);
+    public void updateBank(@RequestBody BankAccountEntity bank) {
+        bankService.updateBank(bank);
     }
 
     @DeleteMapping(path="{bankId}")

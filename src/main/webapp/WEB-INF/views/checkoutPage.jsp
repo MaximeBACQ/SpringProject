@@ -43,7 +43,7 @@
 <%}else{
     %>
     <h2 class="error-message">You are not coming from a cart, please log in and use your cart button to proceed to checkout.</h2>
-    <a href="index.jsp" >Home</a>
+    <a href="/" >Home</a>
 <%}%>
 </body>
 </html>

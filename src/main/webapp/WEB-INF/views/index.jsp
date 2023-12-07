@@ -5,16 +5,14 @@
 <head>
     <title>Welcome to Zglabim</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
 </head>
 <body>
 
 <jsp:include page="header.jsp"/>
-<%@ include file="../html/accueil.html" %>
-<%@ include file="../html/footer.html" %>
 
 </body>
 </html>

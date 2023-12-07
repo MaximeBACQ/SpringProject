@@ -1,8 +1,8 @@
 <%@ page import="com.jeeSpring.Model.ProductEntity" %>
-<%@ page import="jakarta.persistence.TypedQuery" %>
-<%@ page import="com.jeeSpring.Repository.JPAUtil" %>
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.jeeSpring.Repository.ProductRepository" %>
+<%@ page import="com.jeeSpring.Controller.ProductController" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,9 +23,12 @@
 <div class="search-title"><strong>Results :</strong></div><br><br>
 
     <%
-        ProductDAO productDAO = new ProductDAO();
+
+        ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(application);
+        ProductController productController = ctx.getBean(ProductController.class);
+
         String labels = request.getParameter("products");
-        ArrayList<ProductEntity> productList = new ArrayList<>(productDAO.searchProductsByLabelAndDescription(labels));
+        ArrayList<ProductEntity> productList = new ArrayList<>(productController.searchProductsByLabelAndDescription(labels));
 
          for(ProductEntity p : productList){
          %>

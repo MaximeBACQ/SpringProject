@@ -1,4 +1,4 @@
-package com.jeeSpring.Business;
+package com.jeeSpring.Business.Services;
 
 import com.jeeSpring.Model.User;
 import com.jeeSpring.Repository.UserRepository;
@@ -26,8 +26,7 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public void updateUser(Long id, User user) {
-        user.setUserId(id);
+    public void updateUser(User user) {
         userRepository.save(user);
     }
 

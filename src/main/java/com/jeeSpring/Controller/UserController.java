@@ -1,20 +1,16 @@
 package com.jeeSpring.Controller;
 
+import com.jeeSpring.Exceptions.UserExistenceException;
 import com.jeeSpring.Model.User;
-import com.jeeSpring.Business.UserService;
+import com.jeeSpring.Business.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(path="/Users")
 public class UserController {
     private final UserService userService;
 
@@ -23,43 +19,40 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
 
-    @PostMapping
-    public void createUser(@RequestBody User user){
+
+    public void createUser(User user) throws UserExistenceException{
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);
         userService.createUser(user);
     }
 
-    @GetMapping("{userId}")
-    public User getUserById(@PathVariable Long userId) {
+
+    public User getUserById(Long userId) throws UserExistenceException {
         return userService.getUserById(userId);
     }
 
-    @PutMapping("{userId}")
-    public void updateUser(@PathVariable Long userId, @RequestBody User user) {
-        userService.updateUser(userId, user);
+
+    public void updateUser(User user) {
+        userService.updateUser(user);
     }
 
-    @DeleteMapping(path="{userId}")
-    public void deleteUser(@PathVariable("userId") Long userId){
+
+    public void deleteUser(Long userId){
         userService.deleteUser(userId);
     }
 
-    @PostMapping("/authenticateUser")
-    public User authenticateUser(@RequestBody Map<String, String> requestBody) {
-        String email = requestBody.get("email");
-        String password = requestBody.get("password");
+
+    public User authenticateUser(String email, String password) {
         return userService.authenticateUser(email, password);
     }
 
-    @PostMapping("/by-email")
-    public User getUserByEmail(@RequestBody Map<String, String> request) {
-        String email = request.get("email");
+
+    public User getUserByEmail(String email) {
         return userService.getUserByEmail(email);
     }
 }

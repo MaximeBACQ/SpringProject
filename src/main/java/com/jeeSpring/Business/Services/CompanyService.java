@@ -1,4 +1,4 @@
-package com.jeeSpring.Business;
+package com.jeeSpring.Business.Services;
 
 import com.jeeSpring.Model.CompanyEntity;
 import com.jeeSpring.Repository.CompanyRepository;
@@ -24,8 +24,7 @@ public class CompanyService {
         return companyRepository.findById(id).orElse(null);
     }
 
-    public void updateCompany(Long id, CompanyEntity company) {
-        company.setCompanyId(id);
+    public void updateCompany(CompanyEntity company) {
         companyRepository.save(company);
     }
 

@@ -46,13 +46,13 @@
         }else{
             %>
 <h2> You're not a moderator nor an admin, you do not have access to this page</h2>
-<a href="index.jsp">back to index</a>
+<a href="/">back to index</a>
             <%
         }
     }else{
             %>
 <h2>You're not logged in, please log in as a moderator or admin to access this page.</h2>
-<a href="index.jsp">back to index</a>
+<a href="/">back to index</a>
     <%}
     if(session.getAttribute("finalMsg")!=null){
     %>

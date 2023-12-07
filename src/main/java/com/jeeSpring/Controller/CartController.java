@@ -1,6 +1,6 @@
 package com.jeeSpring.Controller;
 
-import com.jeeSpring.Business.CartService;
+import com.jeeSpring.Business.Services.CartService;
 import com.jeeSpring.Model.CartEntity;
 import com.jeeSpring.Model.ProductEntity;
 import com.jeeSpring.Model.User;
@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
-@RequestMapping(path="/Carts")
 public class CartController {
 
     private final CartService cartService;
@@ -21,28 +19,27 @@ public class CartController {
         this.cartService = cartService;
     }
 
-    @GetMapping
+
     public List<CartEntity> getAllCarts(){
         return cartService.getAllCarts();
     }
 
-    @PostMapping
-    public void createCart(@RequestBody CartEntity cart){
+
+    public void createCart(CartEntity cart){
         cartService.createCart(cart);
     }
 
-    @GetMapping("{cartId}")
-    public CartEntity getCartById(@PathVariable Long cartId) {
+
+    public CartEntity getCartById(Long cartId) {
         return cartService.getCartById(cartId);
     }
 
-    @PutMapping("{cartId}")
-    public void updateCart(@PathVariable Long cartId, @RequestBody CartEntity cart) {
-        cartService.updateCart(cartId, cart);
+
+    public void updateCart(CartEntity cart) {
+        cartService.updateCart(cart);
     }
 
-    @DeleteMapping(path="{cartId}")
-    public void deleteCart(@PathVariable("cartId") Long cartId){
+    public void deleteCart(Long cartId){
         cartService.deleteCart(cartId);
     }
     /*
@@ -54,8 +51,8 @@ public class CartController {
         return cartService.getCartByUserAndProduct(userId, productId);
     } */
 
-    @PostMapping("/getCarts")
-    public List<CartEntity> getCartsByUser(@RequestBody User user) {
+
+    public List<CartEntity> getCartsByUser(User user) {
         return cartService.getCartsByUser(user);
     }
 

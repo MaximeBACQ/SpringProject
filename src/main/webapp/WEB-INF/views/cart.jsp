@@ -1,7 +1,10 @@
 <%@ page import="com.jeeSpring.Model.ProductEntity" %>
-<%@ page import="com.jeeSpring.Repository.CartRepository" %>
+<%@ page import="com.jeeSpring.Controller.CartController" %>
 <%@ page import="com.jeeSpring.Model.CartEntity" %>
 <%@ page import="java.util.ArrayList" %>
+
+<%@ page import="org.springframework.context.ApplicationContext" %>
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -34,7 +37,7 @@
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
                             console.log("Mise à jour réussie !");
-                            location.href = "cart.jsp";
+                            location.href = "cart";
                         } else {
                             console.error("Erreur lors de la mise à jour de la quantité :" + "L'url pr appeler la servlet" + "ChangeQuantityServlet?productId=" + productId + "&newQuantity=", xhr.statusText);
                         }
@@ -60,13 +63,15 @@
 
         int grandTotal = 0;
 
-        CartDAO cartDAO = new CartDAO();
+        ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(application);
+        CartController cartController = ctx.getBean(CartController.class);
+
         ArrayList<CartEntity> cartArrayList  =
-                new ArrayList<>(cartDAO.findCartsByUserId(user.getUserId()));
+                new ArrayList<>(cartController.getCartsByUser(user));
 
         if (cartArrayList.isEmpty()) {
 %>
-<div class="empty-cart">Your bag is <strong>empty</strong><br><br><a href="index.jsp" home></a><br><br><br></div>
+<div class="empty-cart">Your bag is <strong>empty</strong><br><br><a href="/" home></a><br><br><br></div>
 <%
 } else {
 %>
@@ -97,7 +102,7 @@
             </div>
             <div class="product-cart-price"><strong><%= total %>&euro;</strong>
 
-            <br><br><br><br><img src="img/bin.png"/>
+            <br><br><br><br><img src="${pageContext.request.contextPath}/images/bin.png"/>
             </div>
         </div>
         <%
@@ -108,7 +113,7 @@
         <div class="right-cart-title"><strong>Summary</strong></div><br><br>
         Subtotal : <%= grandTotal %> &euro;
         <br>
-        <form action="checkoutPage.jsp" method="post">
+        <form action="checkoutPage" method="post">
             <input class="right-cart-checkout" type='submit' name="Checkout" value="Checkout"/>
         </form>
     </div>
@@ -116,7 +121,7 @@
     <%
             }
         }else {
-            response.sendRedirect("loginPage.jsp");
+            response.sendRedirect("loginPage");
         }
     %>
 </div>

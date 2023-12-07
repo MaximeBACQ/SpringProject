@@ -1,10 +1,9 @@
-package com.jeeSpring.Business;
+package com.jeeSpring.Business.Services;
 
 import com.jeeSpring.Model.BankAccountEntity;
 import com.jeeSpring.Repository.BankRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -25,8 +24,7 @@ public class BankService {
         return bankRepository.findById(id).orElse(null);
     }
 
-    public void updateBank(Long id, BankAccountEntity bank) {
-        bank.setBankId(id);
+    public void updateBank(BankAccountEntity bank) {
         bankRepository.save(bank);
     }
 

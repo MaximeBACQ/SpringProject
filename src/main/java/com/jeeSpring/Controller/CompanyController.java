@@ -1,6 +1,6 @@
 package com.jeeSpring.Controller;
 
-import com.jeeSpring.Business.CompanyService;
+import com.jeeSpring.Business.Services.CompanyService;
 import com.jeeSpring.Model.CompanyEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="/Companies")
 public class CompanyController {
 
     private final CompanyService companyService;
@@ -18,28 +17,26 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @GetMapping
+
     public List<CompanyEntity> getAllCompanies(){
         return companyService.getAllCompanies();
     }
 
-    @PostMapping
-    public void createCompany(@RequestBody CompanyEntity company){
+
+    public void createCompany(CompanyEntity company){
         companyService.createCompany(company);
     }
 
-    @GetMapping("{companyId}")
-    public CompanyEntity getCompanyById(@PathVariable Long companyId) {
+
+    public CompanyEntity getCompanyById(Long companyId) {
         return companyService.getCompanyById(companyId);
     }
 
-    @PutMapping("{companyId}")
-    public void updateCompany(@PathVariable Long companyId, @RequestBody CompanyEntity company) {
-        companyService.updateCompany(companyId, company);
+    public void updateCompany(CompanyEntity company) {
+        companyService.updateCompany(company);
     }
 
-    @DeleteMapping(path="{companyId}")
-    public void deleteCompany(@PathVariable("companyId") Long companyId){
+    public void deleteCompany(Long companyId){
         companyService.deleteCompany(companyId);
     }
 }
