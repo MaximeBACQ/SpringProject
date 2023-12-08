@@ -175,5 +175,5 @@
 
     </body>
 
-    <jsp:include page="../templates/footer.jsp" >
+    <jsp:include page="../templates/footer.jsp" />
     </html>

@@ -26,8 +26,6 @@ public class UserController {
 
 
     public void createUser(User user) throws UserExistenceException{
-        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-        user.setPassword(hashedPassword);
         userService.createUser(user);
     }
 

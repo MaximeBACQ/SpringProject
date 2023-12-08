@@ -90,6 +90,8 @@
 			<version>1.6.2</version>
 		</dependency>
 
+		<!-- Bycrypt for password security -->
+
 		<dependency>
 			<groupId>org.mindrot</groupId>
 			<artifactId>jbcrypt</artifactId>

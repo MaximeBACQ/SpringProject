@@ -54,7 +54,7 @@ public class ModeratorServlet extends HttpServlet {
 
                     productController.createProduct(newProduct);
 
-                    response.sendRedirect("index");
+                    response.sendRedirect("/");
             }
         }
     }

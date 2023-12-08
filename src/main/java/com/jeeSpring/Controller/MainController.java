@@ -27,5 +27,37 @@ public class MainController {
         return "cart";
     }
 
+    @GetMapping("/registerPage")
+    public String registerPage() {
+        return "registerPage";
+    }
+
+    @GetMapping("/mailVerification")
+    public String mailVerification() {
+        return "mailVerification";
+    }
+
+    @GetMapping("/productPage")
+    public String productPage() {
+        return "productPage";
+    }
+
+    @GetMapping("/accountPage")
+    public String accountPage() {
+        return "accountPage";
+    }
+
+    @GetMapping("/adminPage")
+    public String adminPage() {
+        return "adminPage";
+    }
+
+    @GetMapping("/moderatorPage")
+    public String moderatorPage() {
+        return "moderatorPage";
+    }
+
+
+
 }
 

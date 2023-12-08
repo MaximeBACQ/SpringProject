@@ -1,7 +1,6 @@
 package com.jeeSpring.Business.Servlet;
 
 import com.jeeSpring.Controller.ProductController;
-import com.jeeSpring.Controller.UserController;
 import com.jeeSpring.Model.ProductEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
