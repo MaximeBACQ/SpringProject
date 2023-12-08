@@ -7,17 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Produit</title>
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
 </head>
 <body>
 
 
 
-<%@ include file="header.jsp" %>
+<jsp:include page="header.jsp" />
 <br><br><br><br>
 
 <div class="search-title"><strong>Results :</strong></div><br><br>
@@ -83,7 +83,7 @@
 &lt;%&ndash;    %>&ndash;%&gt;
 &lt;%&ndash;</div>&ndash;%&gt;
 &lt;%&ndash;<br><br><br><br><br><br><br><br><br><br><br><br><br><br>*/--%>
-<%@ include file="../html/footer.html" %>
+<jsp:include page="../templates/footer.jsp" />
 
 </body>
 </html>

@@ -6,11 +6,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Admin interface</title>
-        <link rel="stylesheet" type="text/css" href="css/cart.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css">
         <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
         <%
             User deleted = null;
@@ -174,5 +174,6 @@
     </div>
 
     </body>
-    <%@ include file="../html/footer.html" %>
+
+    <jsp:include page="../templates/footer.jsp" >
     </html>

@@ -5,7 +5,7 @@
     <% String logFail = (String) session.getAttribute("refused");
         session.removeAttribute("refused");
     %>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 <body>
 <div class="tout">

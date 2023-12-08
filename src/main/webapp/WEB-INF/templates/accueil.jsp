@@ -20,9 +20,9 @@
 <div class="container">
     <div class="slider-wrapper">
         <div class="slider">
-            <img id="slide-1" src="img/im2.png"/>
-            <img id="slide-2" src="img/im1.png"/>
-            <img id="slide-3" src="img/im2.png"/>
+            <img id="slide-1" src="${pageContext.request.contextPath}/images/im2.png"/>
+            <img id="slide-2" src="${pageContext.request.contextPath}/images/im1.png"/>
+            <img id="slide-3" src="${pageContext.request.contextPath}/images/im2.png"/>
         </div>
         <div class="slider-nav">
             <a href="#slide-1"></a>
@@ -76,7 +76,7 @@
 
         </div>
 
-        <a href=""><img src="img/a5.jpg" /></a>
+        <a href=""><img src="${pageContext.request.contextPath}/images/a5.jpg" /></a>
 
 
     </div>
@@ -102,7 +102,7 @@
             <a ><button>En savoir plus</button></a>
         </div>
 
-        <a href=""><img src="img/a6.jpg" /></a>
+        <a href=""><img src="${pageContext.request.contextPath}/images/a6.jpg" /></a>
 
     </div>
 

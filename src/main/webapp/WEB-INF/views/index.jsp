@@ -13,6 +13,8 @@
 <body>
 
 <jsp:include page="header.jsp"/>
+<jsp:include page="../templates/accueil.jsp"/>
+<jsp:include page="../templates/footer.jsp" />
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Checkout</title>
-    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/payment.css">
 </head>
 <body>
 <% if(request.getParameter("Checkout")!=null){%>

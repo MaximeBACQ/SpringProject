@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Account Page</title>
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/cart.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/account.css">
 
     <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
 </head>
@@ -34,7 +34,6 @@
     %>
 </div>
 <br><br><br>
-<link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}">
-<%@ include file="../css/footer.css" %>
+
 </body>
 </html>

@@ -58,16 +58,18 @@ public class CartServlet extends HttpServlet {
             if (obj == null) {
                 response.sendRedirect("loginPage");
             }
+            else {
 
-            User user = (User) obj;
+                User user = (User) obj;
 
-            ProductEntity product =  productController.getProductById(Long.parseLong(request.getParameter("productId")));
+                ProductEntity product =  productController.getProductById(Long.parseLong(request.getParameter("productId")));
 
-            CartEntity cart = new CartEntity(1, user, product);
+                CartEntity cart = new CartEntity(1, user, product);
 
-            cartController.createCart(cart);
+                cartController.createCart(cart);
 
-            response.sendRedirect("cart");
+                response.sendRedirect("cart");
+            }
 
         }catch (Exception e){
             e.printStackTrace();
