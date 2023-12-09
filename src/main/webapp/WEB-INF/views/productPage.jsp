@@ -30,11 +30,39 @@
         String labels = request.getParameter("products");
         ArrayList<ProductEntity> productList = new ArrayList<>(productController.searchProductsByLabelAndDescription(labels));
 
-         //for(ProductEntity p : productList){
+         for(ProductEntity p : productList){
          %>
 
+<div class="en-vedette">
+    <div class="vedette-produit">
+        <div class="vedette-texte">
+            <div class="vedette-titre">
+                <strong><%=p.getLabel()%></strong> <br><br>
+            </div>
+            <%=p.getDescription()%><br><br>
+            Stock : <%if(p.getStock()==0){%>
+            Out of stock
+            <%
+            }else{
+            %>
+            <%=p.getStock()%>
+            <%}%><br><br>
+            <br><br>
+            &agrave; partir de <br>
+            <div class="vedette-prix"><strong><%=p.getPrice()%> &euro;</strong></div><br><br><br><br>
 
+            <form action="CartServlet" method="post">
+                <input type="hidden" name="productId" value="<%=p.getProductId()%>" />
+                <input type="submit" value="Ajouter au panier" />
+            </form>
+        </div>
 
+        <a href="detailledProductPage?productId=<%=p.getProductId()%>"><img src="<%=p.getProductImage()%>" alt="Product Image Missing"></a>
+    </div>
+</div>
+<br><br><br>
+<%
+    }
 %>
 
 <%--            <%=productList.toString() %>--%>
