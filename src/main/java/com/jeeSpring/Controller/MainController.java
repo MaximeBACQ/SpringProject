@@ -57,6 +57,11 @@ public class MainController {
         return "moderatorPage";
     }
 
+    @GetMapping("/detailledProductPage")
+    public String detailledProductPage() {
+        return "detailledProductPage";
+    }
+
 
 
 }

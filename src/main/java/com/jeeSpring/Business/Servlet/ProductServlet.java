@@ -12,8 +12,8 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import java.io.IOException;
 
-@WebServlet(name = "ProductServlet", urlPatterns = "/productPage")
-public class productServlet extends HttpServlet {
+@WebServlet(name = "ProductServlet", urlPatterns = "/ProductServlet")
+public class ProductServlet extends HttpServlet {
 
     private ProductController productController;
 
