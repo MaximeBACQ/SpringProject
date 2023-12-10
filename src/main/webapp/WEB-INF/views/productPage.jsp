@@ -65,26 +65,6 @@
     }
 %>
 
-<%--            <%=productList.toString() %>--%>
-
-<%--    TypedQuery<ProductEntity> query = JPAUtil.getEntityManager().createQuery("SELECT u FROM SiteUser u WHERE label LIKE %%")--%>
-<%--<%--/*        if (product != null) {&ndash;%&gt;
-&lt;%&ndash;    %>&ndash;%&gt;
-&lt;%&ndash;    <div class="product-details">&ndash;%&gt;
-&lt;%&ndash;        <p>Nom du Produit : <%= product.getLabel() %></p>&ndash;%&gt;
-&lt;%&ndash;        <p>Prix : <%= product.getPrice() %> €</p>&ndash;%&gt;
-&lt;%&ndash;        <p>Quantité en Stock : <%= product.getStock() %></p>&ndash;%&gt;
-&lt;%&ndash;        <p>Compagnie : <%= product.getCompanyId().getName() %></p>&ndash;%&gt;
-&lt;%&ndash;    </div>&ndash;%&gt;
-&lt;%&ndash;    &lt;%&ndash;dash;%&gt;
-&lt;%&ndash;    } else {&ndash;%&gt;
-&lt;%&ndash;    %>&ndash;%&gt;
-&lt;%&ndash;    <p>Le produit n'est pas disponible.</p>&ndash;%&gt;
-&lt;%&ndash;    &lt;%&ndash;dash;%&gt;
-&lt;%&ndash;        }&ndash;%&gt;
-&lt;%&ndash;    %>&ndash;%&gt;
-&lt;%&ndash;</div>&ndash;%&gt;
-&lt;%&ndash;<br><br><br><br><br><br><br><br><br><br><br><br><br><br>*/--%>
 <jsp:include page="../templates/footer.jsp" />
 
 </body>

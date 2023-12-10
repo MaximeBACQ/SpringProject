@@ -8,17 +8,17 @@
 
 #header-banniere-logo {
     float: left;
-    width: 60px;
+    width: 110px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 200px;
+    margin-left: 160px;
 }
 
 
 #header-banniere-titre {
     color: black;
     font-size: 30px;
-    padding-left: 28%;
+    padding-left: 27.5%;
     padding-right: 25%;
     letter-spacing: 2.5px;
 }
@@ -34,7 +34,7 @@
 .header-banniere li  {
     color: white;
     list-style: none;
-    margin-right: 20px;
+    margin-left: 35px;
 }
 
 
@@ -49,9 +49,21 @@
     margin-left:5px;
 }
 
-.header-banniere li a {
+.header-banniere li a{
     text-decoration: none;
     color: white;
+}
+
+
+.header-banniere li .connected{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.header-banniere li .connected:hover{
+    color:orange;
+    text-shadow: #FC0 1px 0 10px;
 }
 
 
@@ -233,7 +245,7 @@
     text-align: left;
     width: 150px;
     padding: 10px;
-        border-bottom: 1px dotted #C3B1E1;
+    border-bottom: 1px dotted #C3B1E1;
 }
 
 

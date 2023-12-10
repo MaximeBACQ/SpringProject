@@ -16,13 +16,12 @@
 
 
 
-
 <div class="container">
     <div class="slider-wrapper">
         <div class="slider">
-            <img id="slide-1" src="${pageContext.request.contextPath}/images/im2.png"/>
-            <img id="slide-2" src="${pageContext.request.contextPath}/images/im1.png"/>
-            <img id="slide-3" src="${pageContext.request.contextPath}/images/im2.png"/>
+            <img id="slide-1" src="${pageContext.request.contextPath}/images/bed.jpg"/>
+            <img id="slide-2" src="${pageContext.request.contextPath}/images/brosse.png"/>
+            <img id="slide-3" src="${pageContext.request.contextPath}/images/sac.jpg"/>
         </div>
         <div class="slider-nav">
             <a href="#slide-1"></a>
@@ -31,6 +30,7 @@
         </div>
     </div>
 </div>
+
 
 
 
@@ -58,25 +58,27 @@
 
 <div class="en-vedette">
 
+
+
     <div class="vedette-produit">
 
         <div class="vedette-texte">
             <div class="vedette-titre">
-                <strong>Ibanez</strong>  PIA3761-XB<br><br>
+                <strong>Sac &agrave; dos noir</strong>  Kove<br><br>
             </div>
-            Signature Steve Vai "PIA" <br><br>
-            Corps en aulne<br><br>
-            Manche 5 pi&egrave;ces viss&eacute; en &eacute;rable/noyer, <br><br>Touche en palissandre<br>
+            1 grand compartiment central avec fermeture &eacute;clair <br><br>
+            logo IZAC en m&eacute;tal argent&eacute; sur le devant<br><br>
+            Doublure en toile noire, <br><br>finition fermeture en argent brillant<br>
             <br><br>
             &agrave; partir de <br>
-            <div class="vedette-prix"><strong>3498,99 &euro;</strong></div><br><br><br><br>
+            <div class="vedette-prix"><strong>73,99 &euro;</strong></div><br><br><br><br>
 
-            <a href=""><button>En savoir plus</button></a>
+            <a href="detailledProductPage?productId=1"><button>En savoir plus</button></a>
 
 
         </div>
 
-        <a href=""><img src="${pageContext.request.contextPath}/images/a5.jpg" /></a>
+        <a href="detailledProductPage?productId=1"><img src="https://i.postimg.cc/GpP5D0XT/image.png" /></a>
 
 
     </div>
@@ -87,25 +89,24 @@
 
         <div class="vedette-texte">
             <div class="vedette-titre">
-                <strong>Ibanez</strong>TOD10N<br><br>
+                <strong>SonicYou</strong>Rose Gold<br><br>
             </div>
-            Mod&egrave;le signature Tim Henson (Polyphia) <br><br>
-            Table en &eacute;pic&eacute;a de Sitka massif<br><br>
-            Manche coll&eacute; en nyatoh, <br><br>Touche en noyer<br>
+            Brosse &agrave; dents &eacute;lectrique sonique <br><br>
+            Batterie fonctionnant jusqu'&agrave; 300 jours avec une seule charge<br><br>
+            La SonicYou est en mesure d'atteindre les zones difficilement accessibles, <br><br>et de nettoyer en profondeur<br>
             <br><br><br>
             &agrave; partir de <br>
-            <div class="vedette-prix"><strong>500,00 &euro;</strong></div>
-            <div class="vedette-reduc"> 690,00 &euro;</div>
+            <div class="vedette-prix"><strong>89,00 &euro;</strong></div>
+            <div class="vedette-reduc"> 49,00 &euro;</div>
 
             <br><br>
 
-            <a ><button>En savoir plus</button></a>
+            <a href="detailledProductPage?productId=3"><button>En savoir plus</button></a>
         </div>
 
-        <a href=""><img src="${pageContext.request.contextPath}/images/a6.jpg" /></a>
+        <a href="detailledProductPage?productId=3"><img src="https://i.postimg.cc/XqDCDJYG/image.png" /></a>
 
     </div>
-
 
 </div>
 

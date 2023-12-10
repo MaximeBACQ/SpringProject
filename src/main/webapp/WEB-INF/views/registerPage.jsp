@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+<div class="full-wraper">
 <div class ="tout"><div class="main-text">
     <h1>Inscription</h1>
     <form action="RegisterServlet" method="post">
@@ -56,6 +57,11 @@
     </form>
 
 </div></div>
+<div class="login-illustration"><img src="${pageContext.request.contextPath}/images/login.png"></div>
+
+</div>
+
+
     <% String registrationMessage = (String) request.getAttribute("registrationMessage");
         if (registrationMessage != null) {
     %>

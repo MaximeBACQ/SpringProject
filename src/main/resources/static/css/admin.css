@@ -8,17 +8,17 @@
 }
 
 
- .admin-user{
-     border-radius: 1em;
-     box-shadow: 0 0 14px rgba(0,0,0,0.3);
-     padding: 50px;
- }
+.admin-user{
+    border-radius: 1em;
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    padding: 50px;
+}
 
- .admin-product{
-     border-radius: 1em;
-     box-shadow: 0 0 14px rgba(0,0,0,0.3);
-     padding: 50px;
- }
+.admin-product{
+    border-radius: 1em;
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    padding: 50px;
+}
 
 
 .admin-main input{

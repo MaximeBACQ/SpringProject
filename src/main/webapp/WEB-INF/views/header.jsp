@@ -10,10 +10,8 @@
 <body>
 <div class="header">
 <div class="header-banniere">
-    <a href="/"><img id="header-banniere-logo" src="${pageContext.request.contextPath}/images/TENOR.png" alt="Logo Tenor"></a>
+    <a href="/"><img id="header-banniere-logo" src="${pageContext.request.contextPath}/images/fire.png" alt="Logo Tenor"></a>
     <h2 id="header-banniere-titre"> ZGLABIM </h2>
-    <li><a href="">Contact</a></li>
-    <li> | </li>
     <li>
     <%
         HttpSession userSession = request.getSession();
@@ -22,20 +20,27 @@
         if (connectedUser != null) {
             if(connectedUser.getIsAdmin()){
                 %>
-                <a href="adminPage">Compte</a>
-                <a href="LogoutServlet">Déconnexion</a>
+        <a class="connected" href="adminPage">Admin</a>
+        <a href="">|</a>
+        <a class="connected" href="accountPage">Profile</a>
+        <a href="">|</a>
+        <a class="connected" href="LogoutServlet">Déconnexion</a>
                 <%
             }
             else if(connectedUser.getIsModerator()){
             %>
-                <a href="moderatorPage">Compte</a>
-                <a href="LogoutServlet">Déconnexion</a>
+        <a class="connected" href="moderatorPage">Moderator</a>
+        <a href="">|</a>
+        <a class="connected" href="accountPage">Profile</a>
+        <a href="">|</a>
+        <a class="connected" href="LogoutServlet">Déconnexion</a>
             <%
             }
             else {
             %>
-                <a href="accountPage">Compte</a>
-                <a href="LogoutServlet">Déconnexion</a>
+        <a class="connected" href="accountPage">Profile</a>
+        <a href="">|</a>
+        <a class="connected" href="LogoutServlet">Déconnexion</a>
             <%
             }
         }

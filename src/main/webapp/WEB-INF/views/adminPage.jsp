@@ -37,11 +37,6 @@
     <div class="admin-main">
     <h1>Admin Interface, users/moderators actions</h1>
     <br><br><br>
-        <% String msgDelete = (String)request.getAttribute("finalMsgDelete");
-                if(msgDelete!=null){
-                %>
-                <%=msgDelete%>
-    <%}%>
 
         <div class="admin-user">
         <h2>Enter the e-mail of the user you would like to delete</h2>
@@ -52,43 +47,61 @@
             </label>
             <input type="submit" value="Delete User">
         </form>
-<br><br>
+            <br>
+
+            <%
+                String finalMsgDelete = (String) session.getAttribute("finalMsgDelete");
+                if (finalMsgDelete != null) {
+            %>
+            <p><%= finalMsgDelete %></p>
+            <%
+                    session.removeAttribute("finalMsgDelete");
+                }
+            %>
+
+
+            <br><br>
     <h2>Enter the ID of the user you would like to select</h2>
 
-    <% String userSelect = (String) request.getAttribute("finalMsgSelectUser");
-       if(userSelect!=null){
-    %>
-    <%=userSelect%>
-    <%
-    }
-    %>
     <br>
     <form action="AdminServlet" method="post">
         <label for="UserToSelect">
             <input type="number" placeholder="User's id" id="UserToSelect" name="idForSelection">
         </label>
         <input type="submit" value="Select User">
-    </form>
-    <%
-        String userModMsg = (String) request.getAttribute("finalMsgModerator");
-        if(userModMsg != null)
-        {%>
-    <p><%= userModMsg %></p>
-    <%}
-    %>
+    </form><br>
+
+            <%
+                String userSelect = (String) session.getAttribute("finalMsgSelectUser");
+                if(userSelect != null){
+            %>
+            <p><%= userSelect %></p>
+            <% session.removeAttribute("finalMsgSelectUser"); %>
+            <%
+                }
+            %>
+
+
     <form action="AdminServlet" method="post">
         <label for="UserToPromote">
             <input type="number" placeholder="Promote user by id" id="UserToPromote" name="idToPromote">
         </label>
         <input type="submit" value="Promote">
-    </form>
+    </form><br>
 
-    <% String userCpMsg = (String) request.getAttribute("finalMsgCompany");
-        if (userCpMsg != null) {
-    %>
-    <p><%= userCpMsg %></p>
-    <%}else{
-    }%>
+
+
+            <%
+                String userModMsg = (String) session.getAttribute("finalMsgModerator");
+                if (userModMsg != null) {
+            %>
+            <p><%= userModMsg %></p>
+            <% session.removeAttribute("finalMsgModerator"); %>
+            <%
+                }
+            %>
+
+
 <br><br>
     <h3>Obviously only works for moderators</h3><br>
     <form action="AdminServlet" method="post">
@@ -97,33 +110,56 @@
         </label>
         <input type="number" placeholder="Company's id" id="CompanyId" name="CompanyId">
         <input type="submit" value="Add to company" name="submitCompany">
-    </form>
+    </form><br>
 
-    <% String userSellerMsg = (String) request.getAttribute("finalMsgSeller");
-        if (userSellerMsg != null) {
-    %>
-    <p><%= userSellerMsg %></p>
-    <%}else{
-    }%>
+
+            <%
+                String userCpMsg = (String) session.getAttribute("finalMsgCompany");
+                if (userCpMsg != null) {
+            %>
+            <p><%= userCpMsg %></p>
+            <% session.removeAttribute("finalMsgCompany"); %>
+            <%
+                }
+            %>
+
     <form action="AdminServlet" method="post">
         <label for="UserToMakeSeller">
             <input type="number" placeholder="User's id" id="UserToMakeSeller" name="userToMakeSeller">
         </label>
         <input type="submit" value="Make Seller">
-    </form>
-    <% String userIdMessageSeller = (String) request.getAttribute("finalMsgSeller");
-        if (userIdMessageSeller != null) {
-    %>
-    <p><%= userIdMessageSeller %></p>
-    <%}else {
-    }%>
+    </form><br>
+
+            <%
+                String userSellerMsg = (String) session.getAttribute("finalMsgSeller");
+                if (userSellerMsg != null) {
+            %>
+            <p><%= userSellerMsg %></p>
+            <% session.removeAttribute("finalMsgSeller"); %>
+            <%
+                }
+            %>
+
 
     <form action="AdminServlet" method="post">
         <label for="UserToRemoveSeller">
             <input type="number" placeholder="User's id" id="UserToRemoveSeller" name="userToRemoveSeller">
         </label>
         <input type="submit" value="Remove Seller">
-    </form></div>
+    </form><br>
+
+            <%
+                String userRemoveSellerMsg = (String) session.getAttribute("finalMsgRemoveSeller");
+                if (userRemoveSellerMsg != null) {
+            %>
+            <p><%= userRemoveSellerMsg %></p>
+            <% session.removeAttribute("finalMsgRemoveSeller"); %>
+            <%
+                }
+            %>
+
+
+        </div>
     <br><br><br><br>
 
     <div class="admin-product">
@@ -136,38 +172,72 @@
         </label>
         <input type="submit" value="Search Products">
     </form>
-    <% String userIdMessageSearchProducts = (String) request.getAttribute("finalMsgSearchProducts");
-        if (userIdMessageSearchProducts != null) {
-    %>
-    <p><%= userIdMessageSearchProducts %></p>
-    <%}else{
-    }
-        if(request.getAttribute("ProductList")!=null){
-        StringBuilder url = new StringBuilder("productPage?products=");
-        for(ProductEntity p : (List<ProductEntity>) request.getAttribute("ProductList")) {
-            url.append(p.getLabel());
-        }%>
-    <h3>Your product list: <a href="<%=url%>">link</a></h3><%
-    }else{
 
-    }%>
+        <%
+            String searchProductsMsg = (String) session.getAttribute("finalMsgSearchProducts");
+            if (searchProductsMsg != null) {
+        %>
+        <p><%= searchProductsMsg %></p>
+        <% session.removeAttribute("finalMsgSearchProducts"); %>
+
+
+        <%
+            List<ProductEntity> productList = (List<ProductEntity>) session.getAttribute("ProductList");
+            if (productList != null && !productList.isEmpty()) {
+        %>
+        <h3>Search Results:</h3>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Label</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <%
+                for (ProductEntity product : productList) {
+            %>
+            <tr>
+                <td><%= product.getProductId() %></td>
+                <td><%= product.getLabel() %></td>
+                <td><%= product.getDescription() %></td>
+                <td><%= product.getPrice() %></td>
+            </tr>
+            <%
+                }
+            %>
+        </table>
+        <%
+            session.removeAttribute("ProductList");
+        } else if (productList != null) {
+        %><p>No products found.</p><%
+            }
+        }
+    %>
+
 
     <form action="AdminServlet" method="post">
         <label for="ProductToDelete">
             <input type="number" placeholder="Delete product by id" id="ProductToDelete" name="pToDelete">
         </label>
         <input type="submit" value="Delete Product">
-    </form></div>
-    <%
-        }else{
-    %>
-    <h2>You're not an admin, you cannot access that page.</h2>
-    <a href="index.jsp"> Back to index </a>
+    </form><br>
+
+        <% String finalMsgDeleteP = (String) session.getAttribute("finalMsgDeleteP");
+            if (finalMsgDeleteP != null) {
+        %>
+        <p><%= finalMsgDeleteP %></p>
+        <% session.removeAttribute("finalMsgDeleteP");
+        }
+        %>
+
+    </div>
     <%}
     }else{
-            %>
+    %>
+
+    </div>
     <h2>You're not connected, please connect as an admin to see that page.</h2>
-    <a href="index.jsp"> Back to index </a>
+    <a href="index.jsp"> Back to index </a><br><br><br><br><br><br><br><br>
             <%}%>
     <br><br><br><br>
 
