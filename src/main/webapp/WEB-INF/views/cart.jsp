@@ -48,6 +48,28 @@
                 console.error("La nouvelle quantité n'est pas un nombre valide.");
             }
         }
+        function deleteProduct(productId) {
+            // Confirmez avec l'utilisateur s'il est sûr de vouloir supprimer le produit
+            if (confirm("Are you sure you want to delete this product from your cart?")) {
+                // Utilisez une requête AJAX pour envoyer la demande de suppression au serveur
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "DeleteProductServlet?productId=" + productId, true);
+                xhr.send();
+
+                // Gérez la réponse du serveur ici si nécessaire
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            console.log("Suppression réussie !");
+                            // Rafraîchissez la page pour refléter les changements
+                            location.reload();
+                        } else {
+                            console.error("Erreur lors de la suppression du produit :", xhr.statusText);
+                        }
+                    }
+                };
+            }
+        }
     </script>
 
 </head>
@@ -101,8 +123,9 @@
                 Seller : <%= product.getCompanyId().getName() %>
             </div>
             <div class="product-cart-price"><strong><%= total %>&euro;</strong>
-
-            <br><br><br><br><img src="${pageContext.request.contextPath}/images/bin.png"/>
+                <br><br><br><br><input type="image" src="${pageContext.request.contextPath}/images/bin.png"
+                                       onclick="deleteProduct(<%=product.getProductId()%>)"
+                                       alt="Delete"/>
             </div>
         </div>
         <%

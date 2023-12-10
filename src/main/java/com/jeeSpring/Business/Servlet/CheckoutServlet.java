@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "CheckoutServlet", value = "/CheckoutServlet")
-public class CheckoutServlet extends HttpServlet{
+public class    CheckoutServlet extends HttpServlet{
 
     private ProductController productController;
     private CartController cartController;
@@ -71,6 +71,10 @@ public class CheckoutServlet extends HttpServlet{
                         }
                         response.sendRedirect("cart");
                     }
+                }else{
+                    finalMsg = "You entered wrong payment credentials";
+                    request.setAttribute("finalMsgPayment", finalMsg);
+                    response.sendRedirect("cart.jsp");
                 }
             } else {
                 finalMsg = "You are trying to access the payment page from outside of your cart, please pay from your cart";
