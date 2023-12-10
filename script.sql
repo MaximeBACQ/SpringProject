@@ -9,6 +9,10 @@ DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS company_entity;
 DROP TABLE IF EXISTS bank_account_entity;
 
+INSERT INTO bank_account_entity (bank_balance, bank_code, bank_date, cvv) VALUES(1200,1234,'04/25',12);
+
+INSERT INTO company_entity(name)
+VALUES('logitech');
 
 INSERT INTO user (name, surname, username, email, birth_date, gender, password, is_Admin, is_Moderator, is_Seller)
 VALUES ('Admin', 'Admin', 'AdminUser', 'admin@example.com', '1980-05-15', 'Male', '$2a$10$ZqiOG5yYC.NT4wTzctHjv.66AUBVkDjR/hPMkP4H2FiN01Pyk9ePO', 1, 1, 1);

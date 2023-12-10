@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "CheckoutServlet", value = "/CheckoutServlet")
-public class CheckoutServlet extends HttpServlet{
+public class    CheckoutServlet extends HttpServlet{
 
     private BankController bankController;
     private CartController cartController;
@@ -70,8 +70,7 @@ public class CheckoutServlet extends HttpServlet{
                         }
                         response.sendRedirect("cart");
                     }
-                }
-                else {
+                } else {
                     finalMsg = "Invalid bank account";
                     request.setAttribute("finalMsgPayment", finalMsg);
                     response.sendRedirect("cart");
