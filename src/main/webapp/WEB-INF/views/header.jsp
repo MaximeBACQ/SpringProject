@@ -46,9 +46,10 @@
         }
         else {
             %>
+            <div class="connexion-wrapper">
             <div class="neon_inscription">
                 <a href="loginPage">Connexion</a>
-            </div>
+            </div></div>
             <%
         }
         %>

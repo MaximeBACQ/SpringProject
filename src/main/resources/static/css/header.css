@@ -11,15 +11,15 @@
     width: 110px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: 160px;
+    margin-left: 200px;
 }
 
 
 #header-banniere-titre {
     color: black;
     font-size: 30px;
-    padding-left: 27.5%;
-    padding-right: 25%;
+    margin-right: auto;
+    margin-left: auto;
     letter-spacing: 2.5px;
 }
 
@@ -284,6 +284,10 @@
 
 .neon_inscription {
     position: relative;
+}
+
+.connexion-wrapper{
+    margin-right: 200px;
 }
 
 .neon_inscription a {
