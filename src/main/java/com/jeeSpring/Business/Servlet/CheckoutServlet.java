@@ -70,12 +70,7 @@ public class    CheckoutServlet extends HttpServlet{
                         }
                         response.sendRedirect("cart");
                     }
-                }else{
-                    finalMsg = "You entered wrong payment credentials";
-                    request.setAttribute("finalMsgPayment", finalMsg);
-                    response.sendRedirect("cart.jsp");
-                }
-                else {
+                } else {
                     finalMsg = "Invalid bank account";
                     request.setAttribute("finalMsgPayment", finalMsg);
                     response.sendRedirect("cart");
