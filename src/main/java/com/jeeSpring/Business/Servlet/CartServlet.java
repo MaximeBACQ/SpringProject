@@ -62,13 +62,21 @@ public class CartServlet extends HttpServlet {
 
                 User user = (User) obj;
 
-                ProductEntity product =  productController.getProductById(Long.parseLong(request.getParameter("productId")));
+                ProductEntity product =  productController.getProductById(
 
-                CartEntity cart = new CartEntity(1, user, product);
+                        Long.parseLong(request.getParameter("productId"))
+                );
 
-                cartController.createCart(cart);
+                if(cartController.getCartByUserAndProduct(user,product)!=null){
+                    response.sendRedirect("cart");
+                    System.out.println("cas déjà produit");
+                }else{
+                    CartEntity cart = new CartEntity(1, user, product);
 
-                response.sendRedirect("cart");
+                    cartController.createCart(cart);
+
+                    response.sendRedirect("cart");
+                }
             }
 
         }catch (Exception e){
