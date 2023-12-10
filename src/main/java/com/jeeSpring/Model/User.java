@@ -21,6 +21,8 @@ public class User {
     private boolean isAdmin;
     private boolean isModerator;
     private boolean isSeller;
+    private int loyaltyPoints;
+
 
     @ManyToOne
     @JoinColumn(name = "company_id")
@@ -129,6 +131,14 @@ public class User {
 
     public boolean getIsSeller(){return isSeller;}
     public void setIsSeller(boolean seller){isSeller = seller;}
+
+    public int getLoyaltyPoints() {
+        return loyaltyPoints;
+    }
+
+    public void setLoyaltyPoints(int loyaltyPoints) {
+        this.loyaltyPoints = loyaltyPoints;
+    }
 
 
     public CompanyEntity getCompany() {

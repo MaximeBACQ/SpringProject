@@ -62,6 +62,11 @@ public class MainController {
         return "detailledProductPage";
     }
 
+    @PostMapping("/checkoutPage")
+    public String checkoutPage() {
+        return "checkoutPage";
+    }
+
 
 
 }
